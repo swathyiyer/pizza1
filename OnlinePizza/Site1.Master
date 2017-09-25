@@ -27,7 +27,7 @@
                         <li><a runat="server" href="Login.aspx">Log in</a></li>
                     </ul>
                 </AnonymousTemplate>
-
+                    
 
                 <LoggedInTemplate>
                     <ul class="nav navbar-nav navbar-right">       
