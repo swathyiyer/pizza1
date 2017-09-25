@@ -18,7 +18,7 @@
                     <label>Username</label>
                 </asp:TableCell>
                 <asp:TableCell>
-                   <asp:TextBox ID="nametxt" runat="server" ControlToValidate="nametxt"></asp:TextBox>
+                   <asp:TextBox ID="nametxt" runat="server" ></asp:TextBox>
                 </asp:TableCell>
                   <asp:TableCell>
                       <asp:RequiredFieldValidator runat="server" ErrorMessage="RequiredField" ControlToValidate="nametxt" ID="r1" Display="Dynamic"></asp:RequiredFieldValidator>

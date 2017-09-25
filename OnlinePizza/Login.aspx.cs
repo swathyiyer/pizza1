@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -17,7 +18,7 @@ namespace OnlinePizza
 
         protected void registerbtn_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Register.aspx");
+            Response.Redirect("~/Register/Register.aspx");
         }
 
         protected void loginbtb_Click(object sender, EventArgs e)
@@ -30,7 +31,8 @@ namespace OnlinePizza
                 if(exist.Password==passwordtxt.Text)
                 {
                     Session["name"] = nametxt.Text;
-                    Response.Redirect("Welcome.aspx");
+                    //Response.Redirect("Welcome.aspx");
+                    FormsAuthentication.RedirectFromLoginPage(nametxt.Text, true);
                 }
                 else
                 {

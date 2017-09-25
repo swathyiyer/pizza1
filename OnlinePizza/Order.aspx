@@ -10,21 +10,13 @@
                     <label>Pizza Name</label>
                 </asp:TableCell>
                 <asp:TableCell>
-                 <asp:DropDownList ID="DropDownList1" runat="server"></asp:DropDownList>
+                 <asp:DropDownList ID="DropDownList1"  OnSelectedIndexChanged="id1_SelectedIndexChanged" AutoPostBack="True"
+runat="server"></asp:DropDownList>
                 </asp:TableCell>
                     
             </asp:TableRow>
 
 
-               <asp:TableRow>
-                <asp:TableCell>
-                    <label>Pizza Type</label>
-                </asp:TableCell>
-                <asp:TableCell>
-                   
-                    <asp:DropDownList ID="DropDownList2" runat="server"></asp:DropDownList>
-                </asp:TableCell>
-            </asp:TableRow>
             
              <asp:TableRow>
                 <asp:TableCell>
@@ -32,7 +24,7 @@
                 </asp:TableCell>
                 <asp:TableCell>
                    
-                    <asp:TextBox ID="passwordtxt" runat="server" TextMode="Number"></asp:TextBox>
+                    <asp:TextBox ID="quantitytxt" runat="server" TextMode="Number"></asp:TextBox>
                 </asp:TableCell>
             </asp:TableRow>
 
@@ -66,8 +58,10 @@
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <asp:Label ID="alertlbl" runat="server" Text="Label"></asp:Label>
         <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
-        <asp:Button ID="confirmbtb" runat="server" Text="Confirm" OnClick="confirmbtb_Click" />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       <asp:Button ID="addtochatrbtn" runat="server" Text="Add To Cart" OnClick="addtochatrbtn_Click"  />
+         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+         <asp:Button ID="confirmbtb" runat="server" Text="Confirm" OnClick="confirmbtb_Click"  />
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
        
     </div>

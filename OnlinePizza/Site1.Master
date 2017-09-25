@@ -16,15 +16,44 @@
 <h1>ONLINE PIZZA</h1>  
 </header>  
 <nav id="nav">  
-    <ul>  
-        <li><a href="Home.aspx">Home</a></li>  
-        <li><a href="Login.aspx">Login</a></li>  
-        <li><a href="Register.aspx">Register</a></li>  
-        <li><a href="#">Contact</a></li>  
-    </ul>  
+<%--    <ul>  
+       
+       <%-- <li><a href="Login.aspx">Login</a></li>  
+        <li><a href="Register.aspx">Register</a></li>  --%>
+        
+    
+    <asp:LoginView ID="LoginView1" runat="server">
+        <AnonymousTemplate>
+              <ul >
+                   <li><a href="Home.aspx">Home</a></li>  
+                                <li><a runat="server" href="Register.aspx">Register</a></li>
+                                <li><a runat="server" href="Login.aspx">Log in</a></li>
+                                <li><a href="#">Contact</a></li>  
+               </ul>
+        </AnonymousTemplate>
+          <LoggedInTemplate>
+               <ul class="nav navbar-nav navbar-right">
+                                <li>
+                                    <a href="#"  runat="server" ><asp:Label ID="lblUserName" runat="server" ></asp:Label></a>
+                                </li>
+                                <li>
+                                    <a runat="server" href="Order.aspx">Dashboard</a>
+                                    
+                                </li>
+                                <li>
+                                    <a runat="server" href="Confirm.aspx">Add Candidate</a>
+                                </li>
+                           
+                                
+                                <li>
+                                    <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Log out" LogoutPageUrl="Home.aspx" />
+                                </li>
+                            </ul>
+          </LoggedInTemplate>
+    </asp:LoginView>
 </nav>  
 
-  
+    
     <form id="form1" runat="server">
     <div>
         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">

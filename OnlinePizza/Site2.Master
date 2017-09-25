@@ -17,10 +17,10 @@
 </header>  
 <nav id="nav">  
     <ul>  
-        <li><a href="Wlecome.aspx">Home</a></li>  
+        <li><a href="Welecome.aspx">Home</a></li>  
         <li><a href="Order.aspx">Order</a></li>  
-        <li><a href="#">Logout</a></li>  
-        <li><a href="#">Contact</a></li>  
+        <li><a href="Home.aspx" onclick="logout">logout</a></li>  
+        <li><a href="Confirm.aspx">Contact</a></li>  
     </ul>  
  
 </nav>
@@ -35,7 +35,7 @@
     </form>
 
     <footer id="footer">  
-    copyright @c# corner  
+    
 </footer> 
 </body>
 </html>

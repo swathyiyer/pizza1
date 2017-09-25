@@ -31,22 +31,13 @@ namespace OnlinePizza {
         protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
         
         /// <summary>
-        /// DropDownList2 control.
+        /// quantitytxt control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList2;
-        
-        /// <summary>
-        /// passwordtxt control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox passwordtxt;
+        protected global::System.Web.UI.WebControls.TextBox quantitytxt;
         
         /// <summary>
         /// Label1 control.
@@ -74,6 +65,15 @@ namespace OnlinePizza {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label alertlbl;
+        
+        /// <summary>
+        /// addtochatrbtn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button addtochatrbtn;
         
         /// <summary>
         /// confirmbtb control.

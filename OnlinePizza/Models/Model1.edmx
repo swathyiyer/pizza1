@@ -4,7 +4,19 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="PizzaDbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="PizzaDbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Cart_Table">
+          <Key>
+            <PropertyRef Name="CartId" />
+          </Key>
+          <Property Name="CartId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Username" Type="varchar" MaxLength="100" />
+          <Property Name="PizzaId" Type="int" />
+          <Property Name="Pizzaname" Type="varchar" MaxLength="100" />
+          <Property Name="Quantity" Type="int" />
+          <Property Name="Rate" Type="money" />
+          <Property Name="Amount" Type="money" />
+        </EntityType>
         <EntityType Name="Pizza_Table">
           <Key>
             <PropertyRef Name="PizzaId" />
@@ -23,12 +35,44 @@
           <Property Name="Phono" Type="varchar" MaxLength="10" Nullable="false" />
           <Property Name="Address" Type="varchar" MaxLength="100" Nullable="false" />
         </EntityType>
+        <Association Name="FK__Cart_Tabl__Pizza__2A4B4B5E">
+          <End Role="Pizza_Table" Type="Self.Pizza_Table" Multiplicity="0..1" />
+          <End Role="Cart_Table" Type="Self.Cart_Table" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pizza_Table">
+              <PropertyRef Name="PizzaId" />
+            </Principal>
+            <Dependent Role="Cart_Table">
+              <PropertyRef Name="PizzaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Cart_Tabl__Usern__29572725">
+          <End Role="User_Table" Type="Self.User_Table" Multiplicity="0..1" />
+          <End Role="Cart_Table" Type="Self.Cart_Table" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User_Table">
+              <PropertyRef Name="UserName" />
+            </Principal>
+            <Dependent Role="Cart_Table">
+              <PropertyRef Name="Username" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="PizzaDbModelStoreContainer">
+          <EntitySet Name="Cart_Table" EntityType="Self.Cart_Table" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Pizza_Table" EntityType="Self.Pizza_Table" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="User_Table" EntityType="Self.User_Table" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__Cart_Tabl__Pizza__2A4B4B5E" Association="Self.FK__Cart_Tabl__Pizza__2A4B4B5E">
+            <End Role="Pizza_Table" EntitySet="Pizza_Table" />
+            <End Role="Cart_Table" EntitySet="Cart_Table" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Cart_Tabl__Usern__29572725" Association="Self.FK__Cart_Tabl__Usern__29572725">
+            <End Role="User_Table" EntitySet="User_Table" />
+            <End Role="Cart_Table" EntitySet="Cart_Table" />
+          </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="PizzaDbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -40,6 +84,7 @@
           <Property Name="PizzaName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="PizzaPrice" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
           <Property Name="PizzaDesc" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Cart_Table" Relationship="PizzaDbModel.FK__Cart_Tabl__Pizza__2A4B4B5E" FromRole="Pizza_Table" ToRole="Cart_Table" />
         </EntityType>
         <EntityType Name="User_Table">
           <Key>
@@ -49,11 +94,59 @@
           <Property Name="Password" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Phono" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Address" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Cart_Table" Relationship="PizzaDbModel.FK__Cart_Tabl__Usern__29572725" FromRole="User_Table" ToRole="Cart_Table" />
         </EntityType>
         <EntityContainer Name="PizzaDbEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Pizza_Table" EntityType="Self.Pizza_Table" />
           <EntitySet Name="User_Table" EntityType="Self.User_Table" />
+          <EntitySet Name="Cart_Table" EntityType="PizzaDbModel.Cart_Table" />
+          <AssociationSet Name="FK__Cart_Tabl__Pizza__2A4B4B5E" Association="PizzaDbModel.FK__Cart_Tabl__Pizza__2A4B4B5E">
+            <End Role="Pizza_Table" EntitySet="Pizza_Table" />
+            <End Role="Cart_Table" EntitySet="Cart_Table" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Cart_Tabl__Usern__29572725" Association="PizzaDbModel.FK__Cart_Tabl__Usern__29572725">
+            <End Role="User_Table" EntitySet="User_Table" />
+            <End Role="Cart_Table" EntitySet="Cart_Table" />
+          </AssociationSet>
         </EntityContainer>
+        <EntityType Name="Cart_Table">
+          <Key>
+            <PropertyRef Name="CartId" />
+          </Key>
+          <Property Name="CartId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Username" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="PizzaId" Type="Int32" />
+          <Property Name="Pizzaname" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Quantity" Type="Int32" />
+          <Property Name="Rate" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Amount" Type="Decimal" Precision="19" Scale="4" />
+          <NavigationProperty Name="Pizza_Table" Relationship="PizzaDbModel.FK__Cart_Tabl__Pizza__2A4B4B5E" FromRole="Cart_Table" ToRole="Pizza_Table" />
+          <NavigationProperty Name="User_Table" Relationship="PizzaDbModel.FK__Cart_Tabl__Usern__29572725" FromRole="Cart_Table" ToRole="User_Table" />
+        </EntityType>
+        <Association Name="FK__Cart_Tabl__Pizza__2A4B4B5E">
+          <End Type="PizzaDbModel.Pizza_Table" Role="Pizza_Table" Multiplicity="0..1" />
+          <End Type="PizzaDbModel.Cart_Table" Role="Cart_Table" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pizza_Table">
+              <PropertyRef Name="PizzaId" />
+            </Principal>
+            <Dependent Role="Cart_Table">
+              <PropertyRef Name="PizzaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Cart_Tabl__Usern__29572725">
+          <End Type="PizzaDbModel.User_Table" Role="User_Table" Multiplicity="0..1" />
+          <End Type="PizzaDbModel.Cart_Table" Role="Cart_Table" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User_Table">
+              <PropertyRef Name="UserName" />
+            </Principal>
+            <Dependent Role="Cart_Table">
+              <PropertyRef Name="Username" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -77,6 +170,19 @@
                 <ScalarProperty Name="Password" ColumnName="Password" />
                 <ScalarProperty Name="Phono" ColumnName="Phono" />
                 <ScalarProperty Name="Address" ColumnName="Address" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Cart_Table">
+            <EntityTypeMapping TypeName="PizzaDbModel.Cart_Table">
+              <MappingFragment StoreEntitySet="Cart_Table">
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="Rate" ColumnName="Rate" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="Pizzaname" ColumnName="Pizzaname" />
+                <ScalarProperty Name="PizzaId" ColumnName="PizzaId" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="CartId" ColumnName="CartId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

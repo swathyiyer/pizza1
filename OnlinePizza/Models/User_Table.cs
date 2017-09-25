@@ -14,9 +14,18 @@ namespace OnlinePizza.Models
     
     public partial class User_Table
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public User_Table()
+        {
+            this.Cart_Table = new HashSet<Cart_Table>();
+        }
+    
         public string UserName { get; set; }
         public string Password { get; set; }
         public string Phono { get; set; }
         public string Address { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Cart_Table> Cart_Table { get; set; }
     }
 }

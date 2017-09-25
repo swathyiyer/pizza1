@@ -7,6 +7,9 @@
       <Diagram DiagramId="15ffc8c331bb48069331499946f77eef" Name="Diagram1">
         <EntityTypeShape EntityType="PizzaDbModel.Pizza_Table" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="PizzaDbModel.User_Table" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PizzaDbModel.Cart_Table" Width="1.5" PointX="5" PointY="0.75" />
+        <AssociationConnector Association="PizzaDbModel.FK__Cart_Tabl__Pizza__2A4B4B5E" />
+        <AssociationConnector Association="PizzaDbModel.FK__Cart_Tabl__Usern__29572725" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
