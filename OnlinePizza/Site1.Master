@@ -4,66 +4,64 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title> Online Pizza</title>
-      <link rel="stylesheet" type="text/css" href="Home.css"/>  
-    
+    <title> Online Pizza</title>    
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
+    <link href="Content/bootstrap-theme.min.css" rel="stylesheet" />
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
 </head>
-<body>
 
-    <header id="header">  
-<h1>ONLINE PIZZA</h1>  
-</header>  
-<nav id="nav">  
-<%--    <ul>  
-       
-       <%-- <li><a href="Login.aspx">Login</a></li>  
-        <li><a href="Register.aspx">Register</a></li>  --%>
-        
-    
-    <asp:LoginView ID="LoginView1" runat="server">
-        <AnonymousTemplate>
-              <ul >
-                   <li><a href="Home.aspx">Home</a></li>  
-                                <li><a runat="server" href="Register.aspx">Register</a></li>
-                                <li><a runat="server" href="Login.aspx">Log in</a></li>
-                                <li><a href="#">Contact</a></li>  
-               </ul>
-        </AnonymousTemplate>
-          <LoggedInTemplate>
-               <ul class="nav navbar-nav navbar-right">
-                                <li>
-                                    <a href="#"  runat="server" ><asp:Label ID="lblUserName" runat="server" ></asp:Label></a>
-                                </li>
-                                <li>
-                                    <a runat="server" href="Order.aspx">Dashboard</a>
-                                    
-                                </li>
-                                <li>
-                                    <a runat="server" href="Confirm.aspx">Add Candidate</a>
-                                </li>
-                           
-                                
-                                <li>
-                                    <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Log out" LogoutPageUrl="Home.aspx" />
-                                </li>
-                            </ul>
+
+
+<body>
+    <form runat="server">
+        <div class="navbar navbar-inverse navbar-fixed-top" style="left: 0; right: 0; top: 0">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" runat="server" href="~/Register/Home.aspx">ONLINE PIZZA</a>
+                </div>    
+                <asp:LoginView ID="LoginView1" runat="server">
+                <AnonymousTemplate>
+                    <ul class="nav navbar-nav navbar-right">             
+                        <li><a runat="server" href="Register/Register.aspx">Register</a></li>
+                        <li><a runat="server" href="Login.aspx">Log in</a></li>
+                    </ul>
+                </AnonymousTemplate>
+
+
+                <LoggedInTemplate>
+                    <ul class="nav navbar-nav navbar-right">       
+                        <li>
+                            <a runat="server" href="Welcome.aspx">Dashboard</a>        
+                         </li>
+                         <li>
+                            <a runat="server" href="~/Order.aspx">Order</a>          
+                         </li>
+                         <li>
+                            <a runat="server" href="~/Confirm.aspx">Cart</a>
+                         </li>             
+                         <li>
+                            <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Log out" LogoutPageUrl="Home.aspx" />
+                         </li>
+                    </ul>
           </LoggedInTemplate>
     </asp:LoginView>
-</nav>  
 
-    
-    <form id="form1" runat="server">
-    <div>
-        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-        
-        </asp:ContentPlaceHolder>
-    </div>
-    </form>
 
-    <footer id="footer">  
-    copyright @c# corner  
-</footer> 
+   </div> 
+</div>
+    <div >
+        <br />
+        <br />
+   <div class="container body-content">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+       
+            </asp:ContentPlaceHolder>
+            <hr />
+            <footer>
+                <p>&copy; <%: DateTime.Now.Year %> - Recruitment Management System</p>
+            </footer>
+        </div>
+         </form>
 </body>
 </html>

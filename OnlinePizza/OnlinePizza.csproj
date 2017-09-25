@@ -105,10 +105,28 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Confirm.aspx" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <None Include="scripts\jquery-1.9.1.intellisense.js" />
+    <Content Include="scripts\bootstrap.js" />
+    <Content Include="scripts\bootstrap.min.js" />
+    <Content Include="scripts\jquery-1.9.1.js" />
+    <Content Include="scripts\jquery-1.9.1.min.js" />
     <Content Include="Site1.Master" />
     <EntityDeploy Include="Models\Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
@@ -117,8 +135,8 @@
     <Content Include="Models\Model1.edmx.diagram">
       <DependentUpon>Model1.edmx</DependentUpon>
     </Content>
-    <Content Include="Site2.Master" />
     <Content Include="Register\Web.config" />
+    <Content Include="scripts\jquery-1.9.1.min.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -128,7 +146,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
-    <Content Include="Home.aspx" />
+    <Content Include="Register\Home.aspx" />
     <Content Include="Home.css" />
     <Content Include="Login.aspx" />
     <Content Include="Models\Model1.Context.tt">
@@ -159,11 +177,11 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Home.aspx.cs">
+    <Compile Include="Register\Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Home.aspx.designer.cs">
+    <Compile Include="Register\Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
     </Compile>
     <Compile Include="Login.aspx.cs">
@@ -218,13 +236,6 @@
     </Compile>
     <Compile Include="Site1.Master.designer.cs">
       <DependentUpon>Site1.Master</DependentUpon>
-    </Compile>
-    <Compile Include="Site2.Master.cs">
-      <DependentUpon>Site2.Master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Site2.Master.designer.cs">
-      <DependentUpon>Site2.Master</DependentUpon>
     </Compile>
     <Compile Include="Welcome.aspx.cs">
       <DependentUpon>Welcome.aspx</DependentUpon>

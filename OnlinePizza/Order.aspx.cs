@@ -15,7 +15,7 @@ namespace OnlinePizza
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session != null)
+            if (Session["name"] != null)
             {
                 PizzaDbEntities db = new PizzaDbEntities();
                 Pizza_Table pt = new Pizza_Table();
