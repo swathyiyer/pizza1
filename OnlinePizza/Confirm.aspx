@@ -1,8 +1,12 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Confirm.aspx.cs" Inherits="OnlinePizza.Confirm" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
+
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <asp:gridview runat="server" AutoGenerateColumns="False" id="GridView1" DataSourceID="SqlDataSource2" DataKeyNames="CartId"  >
+    <br/>
+<br />
+    <br />
+    <asp:gridview runat="server" AutoGenerateColumns="False" id="GridView1" DataSourceID="SqlDataSource2" DataKeyNames="CartId,State"  >
         <Columns>
             
             <asp:BoundField DataField="CartIdId" HeaderText="CartID" SortExpression="CartId" visible="false"/>
@@ -10,6 +14,7 @@
             <asp:BoundField DataField="Pizzaname" HeaderText="Pizzaname" SortExpression="Pizzaname" />
             <asp:BoundField DataField="Quantity" HeaderText="Quantity" SortExpression="Quantity" />
             <asp:BoundField DataField="Rate" HeaderText="Rate" SortExpression="Rate" />
+             <asp:BoundField DataField="State" HeaderText="State" SortExpression="State" visible="false"/>
             <asp:BoundField DataField="Amount" HeaderText="Amount" SortExpression="Amount" />
             
            
@@ -21,13 +26,13 @@
         </Columns>
         
 </asp:gridview>
-     <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:PizzaDbConnectionString3 %>" 
+     <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:PizzaDbConnectionString %>" 
          DeleteCommand="delete FROM [Cart_Table] where ([CartId] = @CartId) "
-         SelectCommand="SELECT [CartId],[Username], [Pizzaname], [Quantity], [Rate], [Amount] FROM [Cart_Table] WHERE ([Username] = @Username)" 
+         SelectCommand="SELECT [CartId],[Username], [Pizzaname], [Quantity], [Rate], [Amount],[State] FROM [Cart_Table] WHERE ([Username] = @Username) and ([State]!=0)" 
          >
          <SelectParameters>
              <asp:SessionParameter DefaultValue="" Name="Username" SessionField="name" Type="String" />
-            
+             <asp:SessionParameter DefaultValue="" Name="State" SessionField="state" Type="Int32" />
          </SelectParameters>
          <DeleteParameters>
               <asp:Parameter  Name="CartId"  Type="Int32" />
@@ -38,6 +43,6 @@
     <asp:Label ID="Label2" runat="server" Text=""></asp:Label>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <asp:Button ID="confirmbtn" runat="server" Text="Confirm" />
+    <asp:Button ID="confirmbtn" runat="server" Text="Confirm" OnClick="confirmbtn_Click" />
     <br />
 </asp:Content>

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -13,6 +14,18 @@ namespace OnlinePizza
         {
             
         }
-        
+
+        protected void logout(object sender, LoginCancelEventArgs e)
+
+        {
+            Session.Abandon();
+            Session.Clear();
+           
+            FormsAuthentication.SignOut();
+            
+        }
+
+
+
     }
 }

@@ -2,10 +2,14 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    
+    <br/>
+<br />
+    <br />
     welcome <asp:Label ID="nametxt" runat="server" Text="Label"></asp:Label>
-    <asp:Table ID="Table1" runat="server">
-   
+    
+       <div style="margin-top:100px; margin-left: auto; margin-right: auto; margin-bottom: auto;" class="auto-style1">
+           <asp:Table ID="Table1" runat="server" Width="356px" CssClass="bt" Height="125px">
+
                <asp:TableRow>
             <asp:TableCell>
                 <asp:Label ID="Label3" runat="server" Text="Phone number"></asp:Label>
@@ -25,4 +29,5 @@
             </asp:TableCell>
         </asp:TableRow>
     </asp:Table>
+    </div>
     </asp:Content>

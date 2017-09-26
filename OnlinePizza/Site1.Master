@@ -3,12 +3,17 @@
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
+
+
 <head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title> Online Pizza</title>    
+     <link href="Content/bootstrap-theme.min.css" rel="stylesheet" />
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
-    <link href="Content/bootstrap-theme.min.css" rel="stylesheet" />
-    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+   
 </head>
 
 
@@ -41,7 +46,7 @@
                             <a runat="server" href="~/Confirm.aspx">Cart</a>
                          </li>             
                          <li>
-                            <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Log out" LogoutPageUrl="Home.aspx" />
+                            <asp:LoginStatus runat="server" LogoutAction="Redirect"  LogoutText="Log out" LogoutPageUrl="Home.aspx" OnLoggingOut="logout" />
                          </li>
                     </ul>
           </LoggedInTemplate>
@@ -59,9 +64,10 @@
             </asp:ContentPlaceHolder>
             <hr />
             <footer>
-                <p>&copy; <%: DateTime.Now.Year %> - Recruitment Management System</p>
+                <p>&copy; <%: DateTime.Now.Year %> -PIZZA HUT</p>
             </footer>
         </div>
+    </div>
          </form>
 </body>
 </html>

@@ -24,9 +24,9 @@ namespace OnlinePizza
            
             if (Session["name"] != null)
             {
-               
-                  
-                    PizzaDbEntities db = new PizzaDbEntities();
+
+
+                PizzaDbEntities db = new PizzaDbEntities();
                     nametxt.Text = Session["name"].ToString();
                     User_Table exist = (from x in db.User_Table where x.UserName == nametxt.Text select x).FirstOrDefault();
 

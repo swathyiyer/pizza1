@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
+using System.Data.Entity.Validation;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
@@ -76,34 +77,50 @@ namespace OnlinePizza
 
         protected void addtochatrbtn_Click(object sender, EventArgs e)
         {
-            PizzaDbEntities db = new PizzaDbEntities();
-            Cart_Table ob = new Cart_Table();
-            var name = Session["name"].ToString();
-            var pname = Session["pizzaname"].ToString();
-            User_Table ob1 = (from x in db.User_Table where x.UserName == name select x).FirstOrDefault();
-            Pizza_Table ob2 = (from y in db.Pizza_Table where y.PizzaName == pname select y).FirstOrDefault();
-            Cart_Table ob3 = (from z in db.Cart_Table where z.Pizzaname == pname && z.Username== name select z).FirstOrDefault();
-            if (ob3 != null )
-            {
-                ob3.Quantity = Convert.ToInt32(quantitytxt.Text) + ob3.Quantity;
-                ob3.Rate = Convert.ToDecimal(Label1.Text);
-                ob3.Amount = ob3.Quantity * ob3.Rate;
-            }
-            else
-            {
-                ob.Pizzaname = pname;
-                ob.Username = Session["name"].ToString();
-                ob.PizzaId = ob2.PizzaId;
+            //try
+            //{
+                PizzaDbEntities db = new PizzaDbEntities();
+                Cart_Table ob = new Cart_Table();
+                var name = Session["name"].ToString();
+                var pname = Session["pizzaname"].ToString();
+                User_Table ob1 = (from x in db.User_Table where x.UserName == name select x).FirstOrDefault();
+                Pizza_Table ob2 = (from y in db.Pizza_Table where y.PizzaName == pname select y).FirstOrDefault();
+                Cart_Table ob3 = (from z in db.Cart_Table where z.Pizzaname == pname && z.Username == name && z.State==1 select z).FirstOrDefault();
+                if (ob3 != null)
+                {
+                    ob3.Quantity = Convert.ToInt32(quantitytxt.Text) + ob3.Quantity;
+                    ob3.Rate = Convert.ToDecimal(Label1.Text);
+                    ob3.Amount = ob3.Quantity * ob3.Rate;
 
-                ob.Quantity = Convert.ToInt32(quantitytxt.Text);
-                ob.Rate = Convert.ToDecimal(Label1.Text);
-                ob.Amount = ob.Quantity * ob.Rate;
+                }
+                else
+                {
+                    ob.Pizzaname = pname;
+                    ob.Username = Session["name"].ToString();
+                    ob.PizzaId = ob2.PizzaId;
 
+                    ob.Quantity = Convert.ToInt32(quantitytxt.Text);
+                    ob.Rate = Convert.ToDecimal(Label1.Text);
+                    ob.Amount = ob.Quantity * ob.Rate;
+                    ob.State = 1;
 
-            }
-            db.Cart_Table.Add(ob);
-            db.SaveChanges();
-            Response.Redirect("Order.aspx");
+                }
+                Session["State"] = ob.State;
+                db.Cart_Table.Add(ob);
+                db.SaveChanges();
+                Response.Redirect("Order.aspx");
+            
+            //catch (Exception ex)
+            //{
+            //    //foreach (var entityValidationErrors in ex.EntityValidationErrors)
+            //    //{
+            //    //    foreach (var validationError in entityValidationErrors.ValidationErrors)
+            //    //    {
+            //    //        Response.Write("Property: " + validationError.PropertyName + " Error: " + validationError.ErrorMessage);
+            //    //    }
+            //    //}
+            //}
+            
         }
 
         protected void confirmbtb_Click(object sender, EventArgs e)

@@ -25,8 +25,8 @@ namespace OnlinePizza.Models
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<Cart_Table> Cart_Table { get; set; }
         public virtual DbSet<Pizza_Table> Pizza_Table { get; set; }
         public virtual DbSet<User_Table> User_Table { get; set; }
-        public virtual DbSet<Cart_Table> Cart_Table { get; set; }
     }
 }

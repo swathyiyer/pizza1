@@ -4,12 +4,12 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="15ffc8c331bb48069331499946f77eef" Name="Diagram1">
-        <EntityTypeShape EntityType="PizzaDbModel.Pizza_Table" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="PizzaDbModel.User_Table" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="PizzaDbModel.Cart_Table" Width="1.5" PointX="5" PointY="0.75" />
-        <AssociationConnector Association="PizzaDbModel.FK__Cart_Tabl__Pizza__2A4B4B5E" />
-        <AssociationConnector Association="PizzaDbModel.FK__Cart_Tabl__Usern__29572725" />
+      <Diagram DiagramId="d01f1ea9515e4c3dbb26369258d57ce4" Name="Diagram1">
+        <EntityTypeShape EntityType="PizzaDbModel.Cart_Table" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="PizzaDbModel.Pizza_Table" Width="1.5" PointX="0.75" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PizzaDbModel.User_Table" Width="1.5" PointX="0.75" PointY="5.5" IsExpanded="true" />
+        <AssociationConnector Association="PizzaDbModel.FK__Cart_Tabl__Pizza__2A4B4B5E" ManuallyRouted="false" />
+        <AssociationConnector Association="PizzaDbModel.FK__Cart_Tabl__Usern__29572725" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

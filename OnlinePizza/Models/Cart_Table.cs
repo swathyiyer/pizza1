@@ -16,11 +16,12 @@ namespace OnlinePizza.Models
     {
         public int CartId { get; set; }
         public string Username { get; set; }
-        public Nullable<int> PizzaId { get; set; }
+        public int PizzaId { get; set; }
         public string Pizzaname { get; set; }
-        public Nullable<int> Quantity { get; set; }
-        public Nullable<decimal> Rate { get; set; }
-        public Nullable<decimal> Amount { get; set; }
+        public int Quantity { get; set; }
+        public decimal Rate { get; set; }
+        public decimal Amount { get; set; }
+        public int State { get; set; }
     
         public virtual Pizza_Table Pizza_Table { get; set; }
         public virtual User_Table User_Table { get; set; }
