@@ -11,6 +11,7 @@
     <title> Online Pizza</title>    
      <link href="Content/bootstrap-theme.min.css" rel="stylesheet" />
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
+      <link href="Content/StyleSheet1.css" rel="stylesheet" />
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
    
@@ -18,7 +19,7 @@
 
 
 
-<body>
+<body class="design">
     <form runat="server">
         <div class="navbar navbar-inverse navbar-fixed-top" style="left: 0; right: 0; top: 0">
             <div class="container">
@@ -58,16 +59,18 @@
     <div >
         <br />
         <br />
-   <div class="container body-content">
+       
+   <div class="container body-content" >
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
        
             </asp:ContentPlaceHolder>
             <hr />
-            <footer>
+           <%-- <footer>
                 <p>&copy; <%: DateTime.Now.Year %> -PIZZA HUT</p>
-            </footer>
+            </footer>--%>
         </div>
-    </div>
+            </div>
+  
          </form>
 </body>
 </html>

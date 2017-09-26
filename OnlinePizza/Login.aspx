@@ -5,12 +5,15 @@
         width: 497px;
         height: 177px;
     }
+     
 </style>
+   
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-     <div style="margin-top:100px; margin-left: auto; margin-right: auto; margin-bottom: auto;" class="auto-style1">
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server" >
+    <div >
+     <div style="margin-top:200px; margin-left: 500px; margin-right: auto; margin-bottom: auto;" class="auto-style1" >
     
-        <asp:Table ID="Table1" runat="server" Width="356px" CssClass="bt" Height="125px" >
+        <asp:Table ID="Table1" runat="server" Width="356px" CssClass="bt" Height="150px" >
             <asp:TableRow>
                 <asp:TableCell>
                     <label>Username</label>
@@ -31,20 +34,23 @@
                 </asp:TableCell>
             </asp:TableRow>
             
-
        
     
          
            
        
         </asp:Table>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <asp:Label ID="alertlbl" runat="server" Text=""></asp:Label>
         <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:Button ID="loginbtb" runat="server" Text="Login" OnClick="loginbtb_Click" />
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:Button ID="registerbtn" runat="server" Text="Register" OnClick="registerbtn_Click" />
+           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+           <asp:Button ID="loginbtb" runat="server" Text="Log In" OnClick="loginbtb_Click" CssClass="btn btn-default" BackColor="#6E6A6A"  BorderColor="#585656" ForeColor="White" Font-Names="Candara" />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+         <asp:Button ID="registerbtn" runat="server" Text="Register" OnClick="registerbtn_Click" CssClass="btn btn-default" BackColor="#6E6A6A"  BorderColor="#585656" Font-Names="Arial" ForeColor="White" />
+        &nbsp;&nbsp;&nbsp;&nbsp;<br />
+         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+      
     </div>
-        
+  </div>      
 </asp:Content>
