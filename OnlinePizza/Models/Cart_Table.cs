@@ -17,9 +17,7 @@ namespace OnlinePizza.Models
         public int CartId { get; set; }
         public string Username { get; set; }
         public int PizzaId { get; set; }
-        public string Pizzaname { get; set; }
         public int Quantity { get; set; }
-        public decimal Rate { get; set; }
         public decimal Amount { get; set; }
         public int State { get; set; }
     

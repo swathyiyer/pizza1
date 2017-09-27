@@ -16,10 +16,10 @@ namespace OnlinePizza
             
         }
 
-        protected void registerbtn_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("~/Register/Register.aspx");
-        }
+        //protected void registerbtn_Click(object sender, EventArgs e)
+        //{
+        //    Response.Redirect("~/Register/Register.aspx");
+        //}
 
         protected void loginbtb_Click(object sender, EventArgs e)
         {
@@ -36,14 +36,14 @@ namespace OnlinePizza
                 }
                 else
                 {
-                    alertlbl.Text = "password wrong!!";
+                    alertlbl.Text = "Invalid password!!";
                 }
 
                
             }
             else
             {
-                alertlbl.Text = "username wrong!!";
+                alertlbl.Text = "Invalid Username!!";
             }
 
         }

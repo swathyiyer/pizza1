@@ -5,15 +5,20 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <br/>
 <br />
+    &nbsp;&nbsp;
     <br />
+    <br />
+    <br />
+    <br />
+    <div style="margin-top:80px; margin-left: 200px; margin-right: auto; margin-bottom: auto;" >
+
+    
     <asp:gridview runat="server" AutoGenerateColumns="False" id="GridView1" DataSourceID="SqlDataSource2" DataKeyNames="CartId,State"  >
         <Columns>
             
             <asp:BoundField DataField="CartIdId" HeaderText="CartID" SortExpression="CartId" visible="false"/>
             <asp:BoundField DataField="Username" HeaderText="Username" SortExpression="Username" />
-            <asp:BoundField DataField="Pizzaname" HeaderText="Pizzaname" SortExpression="Pizzaname" />
             <asp:BoundField DataField="Quantity" HeaderText="Quantity" SortExpression="Quantity" />
-            <asp:BoundField DataField="Rate" HeaderText="Rate" SortExpression="Rate" />
              <asp:BoundField DataField="State" HeaderText="State" SortExpression="State" visible="false"/>
             <asp:BoundField DataField="Amount" HeaderText="Amount" SortExpression="Amount" />
             
@@ -26,13 +31,12 @@
         </Columns>
         
 </asp:gridview>
+
      <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:PizzaDbConnectionString %>" 
          DeleteCommand="delete FROM [Cart_Table] where ([CartId] = @CartId) "
-         SelectCommand="SELECT [CartId],[Username], [Pizzaname], [Quantity], [Rate], [Amount],[State] FROM [Cart_Table] WHERE ([Username] = @Username) and ([State]!=0)" 
-         >
+         SelectCommand="SELECT CartId, Username, Quantity,Amount, State FROM Cart_Table WHERE (Username = @Username) AND (State = 1)" >
          <SelectParameters>
              <asp:SessionParameter DefaultValue="" Name="Username" SessionField="name" Type="String" />
-             <asp:SessionParameter DefaultValue="" Name="State" SessionField="state" Type="Int32" />
          </SelectParameters>
          <DeleteParameters>
               <asp:Parameter  Name="CartId"  Type="Int32" />
@@ -45,4 +49,5 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <asp:Button ID="confirmbtn" runat="server" Text="Confirm" OnClick="confirmbtn_Click" />
     <br />
+        </div>
 </asp:Content>

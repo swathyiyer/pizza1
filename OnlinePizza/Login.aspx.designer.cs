@@ -40,15 +40,6 @@ namespace OnlinePizza {
         protected global::System.Web.UI.WebControls.TextBox passwordtxt;
         
         /// <summary>
-        /// alertlbl control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label alertlbl;
-        
-        /// <summary>
         /// loginbtb control.
         /// </summary>
         /// <remarks>
@@ -58,12 +49,21 @@ namespace OnlinePizza {
         protected global::System.Web.UI.WebControls.Button loginbtb;
         
         /// <summary>
-        /// registerbtn control.
+        /// RegisterHyperLink control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button registerbtn;
+        protected global::System.Web.UI.WebControls.HyperLink RegisterHyperLink;
+        
+        /// <summary>
+        /// alertlbl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label alertlbl;
     }
 }

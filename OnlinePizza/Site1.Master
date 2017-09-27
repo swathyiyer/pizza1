@@ -47,7 +47,7 @@
                             <a runat="server" href="~/Confirm.aspx">Cart</a>
                          </li>             
                          <li>
-                            <asp:LoginStatus runat="server" LogoutAction="Redirect"  LogoutText="Log out" LogoutPageUrl="Home.aspx" OnLoggingOut="logout" />
+                            <asp:LoginStatus runat="server" LogoutAction="Redirect"  LogoutText="Log out" LogoutPageUrl="Login.aspx" OnLoggingOut="logout" />
                          </li>
                     </ul>
           </LoggedInTemplate>

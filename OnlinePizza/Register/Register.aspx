@@ -8,11 +8,16 @@
 </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-<div style="margin-top:100px; margin-left: auto; margin-right: auto; margin-bottom: auto;" class="auto-style1">
-
-    
-    
-        <asp:Table ID="Table1" runat="server" Width="356px" CssClass="bt" Height="125px" CellSpacing="1" >
+<div style="margin-top:200px; margin-left: 200px; margin-right: auto; margin-bottom: auto;" class="auto-style1">
+      <div class="col-md-10">
+                 <img src="../Models/5.jpg" />
+               </div>
+                 <div class="col-md-2">
+                          <h4>Register</h4>
+                     <br />
+                     <br />
+        <asp:Table ID="Table1" runat="server" Width="400px" CssClass="bt" Height="250px" >
+            
             <asp:TableRow>
                 <asp:TableCell>
                     <label>Username</label>
@@ -21,7 +26,7 @@
                    <asp:TextBox ID="nametxt" runat="server" CssClass="form-control"></asp:TextBox>
                 </asp:TableCell>
                   <asp:TableCell>
-                      <asp:RequiredFieldValidator runat="server" ErrorMessage="RequiredField" ControlToValidate="nametxt" ID="r1" Display="Dynamic"></asp:RequiredFieldValidator>
+                      <asp:RequiredFieldValidator runat="server" ErrorMessage="Required!!" ControlToValidate="nametxt" ID="r1" Display="Dynamic" CssClass="text-danger"></asp:RequiredFieldValidator>
                 </asp:TableCell>  
             </asp:TableRow>
             
@@ -35,7 +40,7 @@
                    
                 </asp:TableCell>
                   <asp:TableCell>
-                      <asp:RequiredFieldValidator runat="server" ErrorMessage="RequiredField" ControlToValidate="passwordtxt" ID="RequiredFieldValidator2" Display="Dynamic"></asp:RequiredFieldValidator>
+                      <asp:RequiredFieldValidator runat="server" CssClass="text-danger" ErrorMessage="Required!!" ControlToValidate="passwordtxt" ID="RequiredFieldValidator2" Display="Dynamic"></asp:RequiredFieldValidator>
                 </asp:TableCell>  
             </asp:TableRow>
            
@@ -47,7 +52,7 @@
                     <asp:TextBox ID="phonotxt" runat="server" CssClass="form-control"></asp:TextBox>
                 </asp:TableCell>
                 <asp:TableCell>
-                      <asp:RequiredFieldValidator runat="server" ErrorMessage="RequiredField" ControlToValidate="passwordtxt" ID="RequiredFieldValidator3" Display="Dynamic"></asp:RequiredFieldValidator>
+                      <asp:RequiredFieldValidator runat="server" CssClass="text-danger" ErrorMessage="Required!!" ControlToValidate="passwordtxt" ID="RequiredFieldValidator3" Display="Dynamic"></asp:RequiredFieldValidator>
                 </asp:TableCell>  
             </asp:TableRow>
        
@@ -61,24 +66,33 @@
                     
                 </asp:TableCell>
              <asp:TableCell>
-                      <asp:RequiredFieldValidator runat="server" ErrorMessage="RequiredField" ControlToValidate="passwordtxt" ID="RequiredFieldValidator4" Display="Dynamic"></asp:RequiredFieldValidator>
+                      <asp:RequiredFieldValidator runat="server"  CssClass="text-danger" ErrorMessage="Required!!" ControlToValidate="passwordtxt" ID="RequiredFieldValidator4" Display="Dynamic"></asp:RequiredFieldValidator>
                 </asp:TableCell>  
             </asp:TableRow>
            
+                        <asp:TableRow >
+            <asp:TableCell>
+                     <asp:Button ID="loginbtb" runat="server" Text=" Register " OnClick="confirmbtb_Click" CssClass="btn btn-default" BackColor="#6E6A6A"  BorderColor="#585656" ForeColor="White" Font-Names="DejaVu Sans" />
+                </asp:TableCell>
+            
+            </asp:TableRow>
+                   <asp:TableRow>
+            <asp:TableCell>
            
+                </asp:TableCell>
+                <asp:TableCell>
+              <asp:Label ID="alertlbl" runat="server"></asp:Label>
+                    
+                </asp:TableCell>
+              
+            </asp:TableRow >
        
         </asp:Table>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:Label ID="alertlbl" runat="server"></asp:Label>
-        <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:Button ID="confirmbtb" runat="server" Text="Confirm" OnClick="confirmbtb_Click" />
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:Button ID="cancelbtn" runat="server" Text="Cancel" CausesValidation="False" OnClick="cancelbtn_Click"/>
+    
+         </div>
+       
     </div>
         
-<%--    </form>--%>
-<%--</body>
-</html>--%>
+
 
 </asp:Content>

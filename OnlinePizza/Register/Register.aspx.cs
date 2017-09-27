@@ -37,10 +37,7 @@ namespace OnlinePizza
                 Response.Redirect("Login.aspx");
             }
         }
-        protected void cancelbtn_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("Home.aspx");
-        }
+      
 
     }
 }
