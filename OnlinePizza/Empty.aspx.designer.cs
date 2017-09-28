@@ -11,7 +11,7 @@ namespace OnlinePizza
 {
 
 
-    public partial class Home
+    public partial class Empty
     {
     }
 }

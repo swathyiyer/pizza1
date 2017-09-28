@@ -3,15 +3,14 @@
     <style type="text/css">
         .auto-style1 {
             margin-left: 116px;
+            border:2px solid black;
+            width:350px;
         }
         .auto-style2 {
-            margin-left: 116px;
+           margin-left:100px;
+            height: 300px;
+            width: 700px;
             
-            margin-right: 116px;
-            margin-bottom:310px;
-            height: 366px;
-            width: 785px;
-            margin-top: 53px;
         }
     </style>
 </asp:Content>
@@ -19,34 +18,35 @@
     <br/>
 <br />
     <br />
-    WELCOME <asp:Label ID="nametxt" runat="server" Text="Label"></asp:Label>!!!
-    
-       <div style="margin-top:50px; margin-left: auto; margin-right: auto; margin-bottom: auto;" class="auto-style1">
+   <h3> WELCOME <asp:Label ID="nametxt" runat="server" Text="Label"></asp:Label>!!!</h3>
+    <br /><br />
+
+       <div  class="auto-style1">
            &nbsp;&nbsp;
            <asp:Table ID="Table1" runat="server" Width="356px" CssClass="bt" Height="125px">
 
                <asp:TableRow>
             <asp:TableCell>
-                <asp:Label ID="Label3" runat="server" Text="Phone number"></asp:Label>
+               <h4> <asp:Label ID="Label3" runat="server" Text="Phone number"></asp:Label></h4>
             </asp:TableCell>
             <asp:TableCell>
-                 <asp:Label ID="Label4" runat="server" Text=""></asp:Label>
+                 <h4><asp:Label ID="Label4" runat="server" Text=""></asp:Label></h4>
             </asp:TableCell>
         </asp:TableRow>
          
 
                <asp:TableRow>
             <asp:TableCell>
-                <asp:Label ID="Label5" runat="server" Text="Address"></asp:Label>
+               <h4> <asp:Label ID="Label5" runat="server" Text="Address"></asp:Label></h4>
             </asp:TableCell>
             <asp:TableCell>
-                 <asp:Label ID="Label6" runat="server" Text=""></asp:Label>
+                 <h4><asp:Label ID="Label6" runat="server" Text=""></asp:Label></h4>
             </asp:TableCell>
         </asp:TableRow>
     </asp:Table>
     &nbsp;</div>
-    <div>
-        <asp:HyperLink runat="server" ID="RegisterHyperLink" ViewStateMode="Disabled" NavigateUrl="Order.aspx" ForeColor="Red">Order Now...</asp:HyperLink>
+   
+    <div >
+ <asp:HyperLink runat="server" NavigateUrl="Order.aspx"><img src="http://www.newvaadvice.com/wp-content/uploads/2015/01/Order-Now-Orange.png" class="auto-style2" /></asp:HyperLink>
     </div>
-    <img src="Models/online-special-roi.jpg" class="auto-style2" />
-    </asp:Content>
+</asp:Content>

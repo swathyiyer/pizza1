@@ -8,25 +8,36 @@ namespace OnlinePizza
 {
     public partial class Welcome : System.Web.UI.Page
     {
-    
+             /// <summary>
+             /// Displaying the details of the user
+             /// </summary>
+            
+  
 
         protected void Page_Load(object sender, EventArgs e)
         {
-           
-            if (Session["name"] != null)
+            try
             {
-                    //Displaying the Details of the User
+                if (Session["name"] != null)
+                {
+
                     PizzaDbEntities db = new PizzaDbEntities();
                     nametxt.Text = Session["name"].ToString();
+                    //Fetching the details
                     User_Table exist = (from x in db.User_Table
                                         where x.UserName == nametxt.Text
                                         select x).FirstOrDefault();
                     Label4.Text = exist.Phono;
                     Label6.Text = exist.Address;
+                }
+                else
+                {
+                    FormsAuthentication.SignOut();
+                }
             }
-            else
+            catch(Exception ex)
             {
-                FormsAuthentication.SignOut();
+                Response.Redirect("UserError.aspx");
             }
         }
     }

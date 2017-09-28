@@ -11,7 +11,7 @@
     <title> Online Pizza</title>    
      <link href="Content/bootstrap-theme.min.css" rel="stylesheet" />
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
-      <link href="Content/StyleSheet1.css" rel="stylesheet" />
+    <link href="Content/StyleSheet1.css" rel="stylesheet" />
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
    
@@ -24,7 +24,7 @@
         <div class="navbar navbar-inverse navbar-fixed-top" style="left: 0; right: 0; top: 0">
             <div class="container">
                 <div class="navbar-header">
-                    <a class="navbar-brand" runat="server" href="~/Register/Home.aspx">ONLINE PIZZA</a>
+                    <a class="navbar-brand" runat="server" href="~/Register/Login.aspx">ONLINE PIZZA</a>
                 </div>    
                 <asp:LoginView ID="LoginView1" runat="server">
                 <AnonymousTemplate>
@@ -36,7 +36,10 @@
                     
 
                 <LoggedInTemplate>
-                    <ul class="nav navbar-nav navbar-right">       
+                    <ul class="nav navbar-nav navbar-right">   
+                        <li>
+                           <asp:Label ID="namelbl" runat="server" Text="" ForeColor="#999999"></asp:Label>
+                        </li>    
                         <li>
                             <a runat="server" href="Welcome.aspx">Dashboard</a>        
                          </li>
@@ -44,7 +47,8 @@
                             <a runat="server" href="~/Order.aspx">Order</a>          
                          </li>
                          <li>
-                            <a runat="server" href="~/Confirm.aspx">Cart</a>
+                           <a runat="server" href="~/Confirm.aspx"  id="cartcount">&nbsp;</a>
+                             
                          </li>             
                          <li>
                             <asp:LoginStatus runat="server" LogoutAction="Redirect"  LogoutText="Log out" LogoutPageUrl="Login.aspx" OnLoggingOut="logout" />

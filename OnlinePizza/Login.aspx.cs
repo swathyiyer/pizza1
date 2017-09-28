@@ -15,37 +15,43 @@ namespace OnlinePizza
         {
             
         }
-
-        //protected void registerbtn_Click(object sender, EventArgs e)
-        //{
-        //    Response.Redirect("~/Register/Register.aspx");
-        //}
-
+        /// <summary>
+        /// Checking for username and password
+        /// </summary>
+        
         protected void loginbtb_Click(object sender, EventArgs e)
         {
-            PizzaDbEntities db = new PizzaDbEntities();
-
-            User_Table exist = (from x in db.User_Table where x.UserName == nametxt.Text select x).FirstOrDefault();
-            if(exist != null)
+            try
             {
-                if(exist.Password==passwordtxt.Text)
+                PizzaDbEntities db = new PizzaDbEntities();
+
+                User_Table exist = (from x in db.User_Table where x.UserName == nametxt.Text select x).FirstOrDefault();
+                //checking if username is correct
+                if (exist != null)
                 {
-                    Session["name"] = nametxt.Text;
-                    //Response.Redirect("Welcome.aspx");
-                    FormsAuthentication.RedirectFromLoginPage(nametxt.Text, true);
+                    //cheching if password is correct
+                    if (exist.Password == passwordtxt.Text)
+                    {
+                        Session["name"] = nametxt.Text;
+                        
+                        FormsAuthentication.RedirectFromLoginPage(nametxt.Text, true);
+                    }
+                    else
+                    {
+                        alertlbl.Text = "Invalid password!!";
+                    }
+
+
                 }
                 else
                 {
-                    alertlbl.Text = "Invalid password!!";
+                    alertlbl.Text = "Invalid Username!!";
                 }
-
-               
             }
-            else
+            catch(Exception ex)
             {
-                alertlbl.Text = "Invalid Username!!";
+                Response.Redirect("UserError.aspx");
             }
-
         }
     }
 }

@@ -3,7 +3,9 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
    <br/>
-<br />
-    <br />
-     Your Order is successfull
+   <br />
+   <div class="jumbotron" style="background-color: #C0C0C0;  margin-top: 200px; text-align: center;"> 
+            <h4> Your Order is successfull!!!</h4>
+    </div>
+    
 </asp:Content>
