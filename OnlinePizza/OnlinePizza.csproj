@@ -114,6 +114,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Models\5.jpg" />
     <Content Include="Models\download %281%29.png" />
+    <Content Include="Models\Empty Cart.png" />
     <Content Include="Models\images %282%29.jfif" />
     <Content Include="Models\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -126,6 +127,8 @@
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
     <Content Include="Models\online-special-roi.jpg" />
+    <Content Include="Models\pen-and-paper %281%29.jpg" />
+    <Content Include="Models\phone.png" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

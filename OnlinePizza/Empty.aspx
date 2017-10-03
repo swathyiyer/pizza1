@@ -4,20 +4,22 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <br />
     <br />
-    <style>
+   <style>
         .tab{
-            margin-top: 200px; 
-            text-align: center;
-            width:600px;
+            margin-top: 150px; 
+            
+            /*width:600px;
             height:200px;
             border:2px solid black;
-            background-image:url("http://gen4congress.com/wp-content/uploads/2017/08/vibrant-dark-wood-floor-pattern-8-popular-dark-wood-floor-pattern-vertical-wooden.jpg");
-            color:white;
-            margin-left:250px;
+            color:white;*/
+           
             text-align:center;
         }
     </style>
     <div class="tab" > 
+        
+        <img src="Models/Empty%20Cart.png" />
             <h3 style="padding-top:40px;" >Your cart is empty!!!</h3>
+        <h5>Looks like you have no items in your shopping cart</h5>
     </div>
 </asp:Content>

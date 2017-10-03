@@ -13,15 +13,6 @@ namespace OnlinePizza {
     public partial class Welcome {
         
         /// <summary>
-        /// nametxt control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label nametxt;
-        
-        /// <summary>
         /// Table1 control.
         /// </summary>
         /// <remarks>
@@ -40,13 +31,13 @@ namespace OnlinePizza {
         protected global::System.Web.UI.WebControls.Label Label3;
         
         /// <summary>
-        /// Label4 control.
+        /// phone control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label4;
+        protected global::System.Web.UI.WebControls.TextBox phone;
         
         /// <summary>
         /// Label5 control.
@@ -58,21 +49,39 @@ namespace OnlinePizza {
         protected global::System.Web.UI.WebControls.Label Label5;
         
         /// <summary>
-        /// Label6 control.
+        /// address control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label6;
+        protected global::System.Web.UI.WebControls.TextBox address;
         
         /// <summary>
-        /// RegisterHyperLink control.
+        /// Label1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink RegisterHyperLink;
+        protected global::System.Web.UI.WebControls.Label Label1;
+        
+        /// <summary>
+        /// feedbacktxt control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox feedbacktxt;
+        
+        /// <summary>
+        /// Button1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Button1;
     }
 }

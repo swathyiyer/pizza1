@@ -12,7 +12,7 @@ namespace OnlinePizza
         /// <summary>
         /// Taking the order from the customer
         /// </summary>
-        
+
 
 
         protected void Page_Load(object sender, EventArgs e)
@@ -43,7 +43,7 @@ namespace OnlinePizza
                     Response.Redirect("Login.aspx");
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Response.Redirect("UserError.aspx");
             }
@@ -72,10 +72,10 @@ namespace OnlinePizza
                 else
                 {
                     alertlbl.Text = "please select pizza name!!!";
-                    Response.Redirect("Order.aspx");
+                    
                 }
             }
-            catch(Exception ex)
+            catch (Exception )
             {
                 Response.Redirect("UserError.aspx");
             }
@@ -89,11 +89,22 @@ namespace OnlinePizza
 
         protected void addtochatrbtn_Click(object sender, EventArgs e)
         {
-           
-                var name = Session["name"].ToString();
+
+            var name = Session["name"].ToString();
+
+            int id;
+
+
+            int.TryParse(DropDownList1.SelectedValue, out id);//To know the id of selected pizza 
+            if (id == 0)
+            {
+                alertlbl.Text = "please select pizza name!!!";
+              
+            }
+            else
+            {
+
                 var pname = Session["pizzaname"].ToString();
-
-
                 Cart_Table ob = new Cart_Table();
                 //Getting the details of the pizza
                 Pizza_Table ob2 = (from y in db.Pizza_Table where y.PizzaName == pname select y).FirstOrDefault();
@@ -117,17 +128,17 @@ namespace OnlinePizza
                     ob.Quantity = Convert.ToInt32(quantitytxt.Text);
                     ob.Amount = ob.Quantity * ob2.PizzaPrice;
                     ob.State = 1;
-
+                    db.Cart_Table.Add(ob);
                 }
 
                 // adding the details to the cart 
-                db.Cart_Table.Add(ob);
+                
                 db.SaveChanges();
-                Response.Redirect("Order.aspx");
+                Response.Redirect("Confirm.aspx");
             }
-          
-         }
+        }
     }
+}
 
 
 

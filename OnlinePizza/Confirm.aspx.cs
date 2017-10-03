@@ -45,7 +45,9 @@ namespace OnlinePizza
             }
             Label2.Text = total.ToString();
         }
-           
+
+     
+                
         
         /// <summary>
         /// Updating the delivered orders
@@ -66,7 +68,11 @@ namespace OnlinePizza
                db.SaveChanges();
                Response.Redirect("Final.aspx");
         }
-     
+
+        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
     }
 

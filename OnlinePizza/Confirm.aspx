@@ -15,19 +15,21 @@
     <div style="margin-top:80px; margin-left: 100px; margin-right: auto; margin-bottom: auto;" >
 
     
-    <asp:gridview runat="server" AutoGenerateColumns="False" id="GridView1" DataSourceID="SqlDataSource2" DataKeyNames="CartId,State" Font-Size="Large" Width="1000px"  >
+    <asp:gridview runat="server" AutoGenerateColumns="False"  id="GridView1" DataSourceID="SqlDataSource2" DataKeyNames="CartId,State" Font-Size="Large" Width="1000px" OnSelectedIndexChanged="GridView1_SelectedIndexChanged"  >
         <Columns>
             
             <asp:BoundField DataField="CartIdId" HeaderText="CartID"  visible="false"/>
             <asp:BoundField DataField="PizzaId" HeaderText="PizzaId"  Visible="false" />
             <asp:BoundField DataField="Username" HeaderText="Username" visible="false" />
-            <asp:BoundField DataField="PizzaName" HeaderText="PizzaName" SortExpression="PizzaName" />
-            <asp:BoundField DataField="Quantity" HeaderText="Quantity" SortExpression="Quantity" />
-             <asp:BoundField DataField="PizzaPrice" HeaderText="PizzaPrice" />
-             <asp:BoundField DataField="State" HeaderText="State" visible="false"/>
-            <asp:BoundField DataField="Amount" HeaderText="Amount" />
+            <asp:BoundField DataField="PizzaName" HeaderText="PizzaName" SortExpression="PizzaName" ReadOnly="True" />
+          <asp:BoundField DataField="Quantity" HeaderText="Quantity" SortExpression="Quantity" />
+            <asp:BoundField DataField="PizzaPrice" HeaderText="PizzaPrice"  />
+            <asp:BoundField DataField="State" HeaderText="State" visible="false"/>
+            <asp:BoundField DataField="Amount" HeaderText="Amount"/>
             
            
+          
+
             
             <asp:CommandField ShowDeleteButton="true"  /> 
             
@@ -44,7 +46,9 @@
          SelectCommand="SELECT CartId, Cart_Table.Username,Pizza_Table.PizzaName, Quantity,Pizza_Table.PizzaPrice,Amount, State 
                          FROM Cart_Table inner join User_Table on Cart_Table.Username=User_Table.UserName
                          inner join Pizza_Table on Cart_Table.PizzaId=Pizza_Table.PizzaId
-                         WHERE (Cart_Table.Username = @Username) AND (State = 1)"  OnDeleted="Deleted">
+                         WHERE (Cart_Table.Username = @Username) AND (State = 1)"  OnDeleted="Recalculate" >
+         
+         
          <SelectParameters>
              <asp:SessionParameter DefaultValue="" Name="Username" SessionField="name" Type="String" />
          </SelectParameters>
@@ -52,6 +56,8 @@
               <asp:Parameter  Name="CartId"  Type="Int32" />
               
          </DeleteParameters>
+        
+         
 </asp:SqlDataSource>
      <asp:Label ID="Label1" runat="server" Text="Label">total</asp:Label>
     <asp:Label ID="Label2" runat="server" Text=""></asp:Label>
@@ -62,12 +68,13 @@
         </div>
  
        <script runat = "server" >
-           private void Deleted(object source, SqlDataSourceStatusEventArgs e)
+           private void Recalculate(object source, SqlDataSourceStatusEventArgs e)
            {
 
                calculation();
 
            }
+     
         </script>
     
 </asp:Content>

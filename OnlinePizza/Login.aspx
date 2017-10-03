@@ -4,6 +4,10 @@
     .auto-style1 {
         width: 497px;
         height: 177px;
+        margin-top:200px;
+        margin-left: 200px;
+        margin-right: auto; 
+        margin-bottom: auto;
     }
      
 </style>
@@ -12,7 +16,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server" >
   
         
-<div style="margin-top:200px; margin-left: 200px; margin-right: auto; margin-bottom: auto;" class="auto-style1" >
+<div class="auto-style1" >
     
             
                <div class="col-md-10">

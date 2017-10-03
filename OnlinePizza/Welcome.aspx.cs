@@ -3,6 +3,7 @@ using System;
 using System.Linq;
 using System.Web.Security;
 using System.Data;
+using System.Net.Mail;
 
 namespace OnlinePizza
 {
@@ -22,22 +23,50 @@ namespace OnlinePizza
                 {
 
                     PizzaDbEntities db = new PizzaDbEntities();
-                    nametxt.Text = Session["name"].ToString();
+                    string name = Session["name"].ToString();
                     //Fetching the details
                     User_Table exist = (from x in db.User_Table
-                                        where x.UserName == nametxt.Text
+                                        where x.UserName == name
                                         select x).FirstOrDefault();
-                    Label4.Text = exist.Phono;
-                    Label6.Text = exist.Address;
+                    phone.Text = exist.Phono;
+                    address.Text = exist.Address;
+                 
                 }
                 else
                 {
                     FormsAuthentication.SignOut();
                 }
             }
-            catch(Exception ex)
+            catch(Exception )
             {
                 Response.Redirect("UserError.aspx");
+            }
+
+        }
+
+        protected void sendmail(object sender, EventArgs e)
+        
+        {
+            try
+            {
+                string name = Session["name"].ToString();
+                MailMessage mailMessage = new MailMessage();
+                mailMessage.To.Add("pizzaonline2017@gmail.com");
+                mailMessage.From = new MailAddress("pizzaonline2017@gmail.com");
+                mailMessage.Subject = "feedback from" + name ;
+                mailMessage.Body = feedbacktxt.Text;
+                SmtpClient smtpClient = new SmtpClient("smtp.gmail.com");
+                smtpClient.DeliveryMethod = SmtpDeliveryMethod.Network;
+                smtpClient.EnableSsl = true;
+                smtpClient.UseDefaultCredentials = false;
+                smtpClient.Credentials = new System.Net.NetworkCredential("pizzaonline2017@gmail.com", "pizzaonline2017swathy");
+                smtpClient.Port = 587;
+                smtpClient.Send(mailMessage);
+                Response.Write("E-mail sent!");
+            }
+            catch (Exception ex)
+            {
+                Response.Write("Could not send the e-mail - error: " + ex.Message);
             }
         }
     }

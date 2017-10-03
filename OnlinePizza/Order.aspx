@@ -1,17 +1,26 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Order.aspx.cs" Inherits="OnlinePizza.Order" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style type="text/css">
+  
         .auto-style1 {
-            width: 262px;
+            width: 541px;
         }
-        .auto-style2 {
-            width: 221px;
-        }
+  
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div style="width:400px; margin:auto; margin-top:100px;">
-    
+
+
+    <div style="margin-top:200px;margin-left:100px; margin-bottom: auto;" class="auto-style4">
+        
+    <div class="col-md-7"><img src="Models/pen-and-paper%20(1).jpg" class="auto-style1" />
+     
+               </div>
+                 <div class="col-md-5">
+                     <h4> Order</h4>
+                     <br />
+                     <br />
+
         <asp:Table ID="Table1" runat="server" Width="380px" Height="250px" >
             <asp:TableRow>
                 <asp:TableCell>
@@ -84,7 +93,7 @@ runat="server"></asp:DropDownList>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         
         <br />
-        
+        </div>
     </div>
  
 </asp:Content>

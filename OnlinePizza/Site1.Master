@@ -47,8 +47,9 @@
                             <a runat="server" href="~/Order.aspx">Order</a>          
                          </li>
                          <li>
-                           <a runat="server" href="~/Confirm.aspx"  id="cartcount">&nbsp;</a>
-                             
+                          <%-- <a runat="server" href="~/Confirm.aspx"  id="cartcount">&nbsp;</a>--%>
+                              <asp:HyperLink NavigateUrl="~/Confirm.aspx" runat="server"> <asp:Label ID="Label1" runat="server" Text="" ForeColor="#999999"></asp:Label>
+                             </asp:HyperLink>
                          </li>             
                          <li>
                             <asp:LoginStatus runat="server" LogoutAction="Redirect"  LogoutText="Log out" LogoutPageUrl="Login.aspx" OnLoggingOut="logout" />

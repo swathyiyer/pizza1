@@ -20,28 +20,37 @@ namespace OnlinePizza
 
                 Label namelbl = (Label)(LoginView1.FindControl("namelbl"));
 
-                namelbl.Text = "Welcome:: " + Convert.ToString(Session["name"]);// displaying username on  header 
-                var name= Convert.ToString(Session["name"]); 
-                //using (PizzaDbEntities db = new PizzaDbEntities())
-                //{
+                namelbl.Text = "Welcome  " + Convert.ToString(Session["name"]);// displaying username on  header 
+                var name= Convert.ToString(Session["name"]);
+                using (PizzaDbEntities db = new PizzaDbEntities())
+                {
+                    try
+                    {
+                        int? listincart = (from a in db.Cart_Table
+                                           where a.Username == name && a.State == 1
+                                           select a.Quantity).Sum();
+                        string count = string.Format("Cart {0}", listincart);
 
-                //    int? listincart = (from a in db.Cart_Table
-                //                       where a.Username == name && a.State == 1
-                //                       select a.Quantity).Sum();
-                //    string count = string.Format("Cart {0}", listincart);
-                //    HtmlAnchor b = this.Master.FindControl("cartcount") as HtmlAnchor;
-                //    //ListItem cartcount = (ListItem)(LoginView1.FindControl("cartcount"));
-                //    b.InnerText = count;
-                //}
-                ////HtmlGenericControl a = (HtmlGenericControl)this.Master.FindControl("cartcount");
-                //a.InnerText = Session["count"].ToString();
+                        Label countlbl = (Label)(LoginView1.FindControl("Label1"));
+
+                        countlbl.Text = count;
+                    }
+                    catch(Exception)
+                    {
+                        Label countlbl = (Label)(LoginView1.FindControl("Label1"));
+
+                        countlbl.Text = "Cart 0";
+                    }
+                    //HtmlAnchor b = this.Master.FindControl("cartcount") as HtmlAnchor;
+                    //ListItem cartcount = (ListItem)(LoginView1.FindControl("cartcount"));
+                    //b.InnerText = count;
+
+                }
+             
             }
 
         }
-        ////protected void Page_PreRender(object sender, EventArgs e)
-        ////{
-        ////    
-        ////}
+      
         protected void logout(object sender, LoginCancelEventArgs e)
 
         {
