@@ -5,14 +5,8 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <link href="Content/StyleSheet1.css" rel="stylesheet" />
-    <br/>
-    <br />
-    &nbsp;&nbsp;
-    <br />
-    <br />
-    <br />
-    <br />
-    <div style="margin-top:80px; margin-left: 100px; margin-right: auto; margin-bottom: auto;" >
+  
+    <div style="margin-top:200px; margin-left: 100px; margin-right: auto; margin-bottom: auto;" >
 
     
     <asp:gridview runat="server" AutoGenerateColumns="False"  id="GridView1" DataSourceID="SqlDataSource2" DataKeyNames="CartId,State" Font-Size="Large" Width="1000px" OnSelectedIndexChanged="GridView1_SelectedIndexChanged"  >
@@ -21,8 +15,8 @@
             <asp:BoundField DataField="CartIdId" HeaderText="CartID"  visible="false"/>
             <asp:BoundField DataField="PizzaId" HeaderText="PizzaId"  Visible="false" />
             <asp:BoundField DataField="Username" HeaderText="Username" visible="false" />
-            <asp:BoundField DataField="PizzaName" HeaderText="PizzaName" SortExpression="PizzaName" ReadOnly="True" />
-          <asp:BoundField DataField="Quantity" HeaderText="Quantity" SortExpression="Quantity" />
+            <asp:BoundField DataField="PizzaName" HeaderText="PizzaName" SortExpression="PizzaName"  />
+            <asp:BoundField DataField="Quantity" HeaderText="Quantity" SortExpression="Quantity" />
             <asp:BoundField DataField="PizzaPrice" HeaderText="PizzaPrice"  />
             <asp:BoundField DataField="State" HeaderText="State" visible="false"/>
             <asp:BoundField DataField="Amount" HeaderText="Amount"/>
@@ -59,8 +53,9 @@
         
          
 </asp:SqlDataSource>
-     <asp:Label ID="Label1" runat="server" Text="Label">total</asp:Label>
-    <asp:Label ID="Label2" runat="server" Text=""></asp:Label>
+     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+     <asp:Label ID="Label1" runat="server" Text="&lt;h3&gt;Total&lt;/h3&gt;" Width="100px" ></asp:Label>
+    <asp:Label ID="Label2" runat="server" Font-Bold="True" Font-Size="Medium"></asp:Label>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <asp:Button ID="confirmbtn" runat="server" Text="Confirm" OnClick="confirmbtn_Click" CssClass="btn btn-default" BackColor="#6E6A6A"  BorderColor="#585656" ForeColor="White" Font-Names="DejaVu Sans"/>
@@ -72,6 +67,7 @@
            {
 
                calculation();
+                Response.Redirect("Confirm.aspx");
 
            }
      

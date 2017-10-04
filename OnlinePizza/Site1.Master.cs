@@ -21,26 +21,21 @@ namespace OnlinePizza
                 Label namelbl = (Label)(LoginView1.FindControl("namelbl"));
 
                 namelbl.Text = "Welcome  " + Convert.ToString(Session["name"]);// displaying username on  header 
-                var name= Convert.ToString(Session["name"]);
-                using (PizzaDbEntities db = new PizzaDbEntities())
-                {
+                
+               
                     try
                     {
-                        int? listincart = (from a in db.Cart_Table
-                                           where a.Username == name && a.State == 1
-                                           select a.Quantity).Sum();
-                        string count = string.Format("Cart {0}", listincart);
+                        cartcalc();
 
-                        Label countlbl = (Label)(LoginView1.FindControl("Label1"));
-
-                        countlbl.Text = count;
                     }
-                    catch(Exception)
+                    catch (Exception)
                     {
                         Label countlbl = (Label)(LoginView1.FindControl("Label1"));
 
                         countlbl.Text = "Cart 0";
                     }
+                
+                    
                     //HtmlAnchor b = this.Master.FindControl("cartcount") as HtmlAnchor;
                     //ListItem cartcount = (ListItem)(LoginView1.FindControl("cartcount"));
                     //b.InnerText = count;
@@ -49,8 +44,22 @@ namespace OnlinePizza
              
             }
 
+        public void cartcalc()
+        {
+            using (PizzaDbEntities db = new PizzaDbEntities())
+            {
+                var name = Convert.ToString(Session["name"]);
+                int? listincart = (from a in db.Cart_Table
+                                   where a.Username == name && a.State == 1
+                                   select a.Quantity).Sum();
+                string count = string.Format("Cart {0}", listincart);
+
+                Label countlbl = (Label)(LoginView1.FindControl("Label1"));
+
+                countlbl.Text = count;
+            }
         }
-      
+
         protected void logout(object sender, LoginCancelEventArgs e)
 
         {

@@ -2,6 +2,7 @@
 using System;
 using System.Data;
 using System.Linq;
+using System.Web.Security;
 using System.Web.UI.WebControls;
 
 namespace OnlinePizza
@@ -16,7 +17,7 @@ namespace OnlinePizza
             /// </summary>
             
 
-                if (Session != null)
+                if (Session["name"] != null)
                 {
 
                 calculation();
@@ -25,8 +26,8 @@ namespace OnlinePizza
                 }
                 else
                 {
-                    Response.Redirect("Home.aspx");
-                }
+                FormsAuthentication.SignOut();
+            }
             }
         public void calculation()
         {
@@ -44,11 +45,12 @@ namespace OnlinePizza
                 Response.Redirect("Empty.aspx");
             }
             Label2.Text = total.ToString();
+          
         }
 
-     
-                
         
+
+
         /// <summary>
         /// Updating the delivered orders
         /// </summary>

@@ -43,7 +43,7 @@ namespace OnlinePizza
                     Response.Redirect("Login.aspx");
                 }
             }
-            catch (Exception ex)
+            catch (Exception )
             {
                 Response.Redirect("UserError.aspx");
             }

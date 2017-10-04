@@ -115,6 +115,7 @@
     <Content Include="Models\5.jpg" />
     <Content Include="Models\download %281%29.png" />
     <Content Include="Models\Empty Cart.png" />
+    <Content Include="Models\feedback.png" />
     <Content Include="Models\images %282%29.jfif" />
     <Content Include="Models\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -129,6 +130,7 @@
     <Content Include="Models\online-special-roi.jpg" />
     <Content Include="Models\pen-and-paper %281%29.jpg" />
     <Content Include="Models\phone.png" />
+    <Content Include="Models\success.jpg" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -173,7 +175,7 @@
     <Content Include="Content\StyleSheet1.css" />
     <Content Include="UserError.aspx" />
     <Content Include="Web.config" />
-    <Content Include="Welcome.aspx" />
+    <Content Include="Feedback.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Confirm.aspx.cs">
@@ -260,12 +262,12 @@
     <Compile Include="UserError.aspx.designer.cs">
       <DependentUpon>UserError.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Welcome.aspx.cs">
-      <DependentUpon>Welcome.aspx</DependentUpon>
+    <Compile Include="Feedback.aspx.cs">
+      <DependentUpon>Feedback.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Welcome.aspx.designer.cs">
-      <DependentUpon>Welcome.aspx</DependentUpon>
+    <Compile Include="Feedback.aspx.designer.cs">
+      <DependentUpon>Feedback.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

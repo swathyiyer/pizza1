@@ -2,10 +2,24 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-   <br/>
+    <br/>
    <br />
-   <div class="jumbotron" style="background-color: #C0C0C0;  margin-top: 200px; text-align: center;"> 
-            <h4> Your Order is successfull!!!</h4>
+   
+        <style>
+        .tab{
+            margin-top: 150px; 
+            text-align:center;
+        }
+    .auto-style1 {
+        width: 571px;
+        height: 371px;
+    }
+    </style>
+    <div class="tab" > 
+        <img src="Models/success.jpg" class="auto-style1" />
+        
+            <h3 style="padding-top:40px;" >Your order was successfull!!!</h3>
+      
     </div>
-    
+      
 </asp:Content>

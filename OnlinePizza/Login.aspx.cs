@@ -1,11 +1,11 @@
 ﻿using OnlinePizza.Models;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Security;
-using System.Web.UI;
-using System.Web.UI.WebControls;
+
+/// <summary>
+/// User login page
+/// </summary>
 
 namespace OnlinePizza
 {
@@ -15,6 +15,7 @@ namespace OnlinePizza
         {
             
         }
+
         /// <summary>
         /// Checking for username and password
         /// </summary>
@@ -29,28 +30,29 @@ namespace OnlinePizza
                 //checking if username is correct
                 if (exist != null)
                 {
-                    //cheching if password is correct
-                    if (exist.Password == passwordtxt.Text)
-                    {
-                        Session["name"] = nametxt.Text;
-                        
-                        FormsAuthentication.RedirectFromLoginPage(nametxt.Text, true);
-                    }
-                    else
-                    {
-                        alertlbl.Text = "Invalid password!!";
-                    }
-
-
+                        //cheching if password is correct
+                        if (exist.Password == passwordtxt.Text)
+                        {
+                            Session["name"] = nametxt.Text;
+                            FormsAuthentication.RedirectFromLoginPage(nametxt.Text, true);
+                        }
+                        //when the password is wrong
+                        else
+                        {
+                            alertlbl.Text = "Invalid password!!";
+                        }
                 }
+
+
+                //when user name is wrong
                 else
                 {
-                    alertlbl.Text = "Invalid Username!!";
+                        alertlbl.Text = "Invalid Username!!";
                 }
             }
-            catch(Exception ex)
+            catch(Exception)
             {
-                Response.Redirect("UserError.aspx");
+                        Response.Redirect("UserError.aspx");
             }
         }
     }

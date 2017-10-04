@@ -62,11 +62,11 @@ namespace OnlinePizza
                 smtpClient.Credentials = new System.Net.NetworkCredential("pizzaonline2017@gmail.com", "pizzaonline2017swathy");
                 smtpClient.Port = 587;
                 smtpClient.Send(mailMessage);
-                Response.Write("E-mail sent!");
+                alertlbl.Text="E-mail sent!";
             }
-            catch (Exception ex)
+            catch (Exception )
             {
-                Response.Write("Could not send the e-mail - error: " + ex.Message);
+                alertlbl.Text = "Could not send the e-mail";
             }
         }
     }

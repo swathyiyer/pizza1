@@ -2,6 +2,10 @@
 using System;
 using System.Linq;
 
+/// <summary>
+/// Registering the new customer
+/// </summary>
+
 
 namespace OnlinePizza
 {
@@ -11,9 +15,7 @@ namespace OnlinePizza
         {
 
         }
-        /// <summary>
-        /// Registering the new customer
-        /// </summary>
+  
 
         protected void confirmbtb_Click(object sender, EventArgs e)
         {
@@ -45,7 +47,7 @@ namespace OnlinePizza
                     Response.Redirect("Login.aspx");
                 }
             }
-            catch(Exception ex)
+            catch(Exception )
             {
                 Response.Redirect("UserError.aspx");
             }
